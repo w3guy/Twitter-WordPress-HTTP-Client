@@ -81,7 +81,7 @@ class Twitter_API_WordPress {
 	 * @return $this
 	 */
 	public function set_get_field( $string ) {
-		$this->getfield = $string;
+		$this->get_field = $string;
 
 		return $this;
 	}
