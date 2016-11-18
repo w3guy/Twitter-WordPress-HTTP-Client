@@ -207,9 +207,12 @@ class Twitter_API_WordPress {
 		);
 
 		if ( ! is_null( $this->post_fields ) ) {
-			$args['body'] = $this->post_fields;
+			$args['body'] = json_encode( $this->post_fields );
 
-			$response = wp_remote_post( $this->request_url, $args );
+			// add the GET parameter to the request url or endpoint
+			$url = $this->request_url . $this->get_field;
+
+			$response = wp_remote_post( $url, $args );
 
 			return wp_remote_retrieve_body( $response );
 		}
