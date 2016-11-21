@@ -207,7 +207,7 @@ class Twitter_API_WordPress {
 		);
 
 		if ( ! is_null( $this->post_fields ) ) {
-			$args['body'] = json_encode( $this->post_fields );
+			$args['body'] = $this->post_fields;
 
 			// add the GET parameter to the request url or endpoint
 			$url = $this->request_url . $this->get_field;
